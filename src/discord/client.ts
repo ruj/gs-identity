@@ -5,7 +5,7 @@ import { USER_ROLE_DISCORD_IDS as UserRoleDiscordIds } from '@/constants/role'
 import { getGsNickname } from '@/utils'
 import { Errors } from '@/constants/errors'
 
-const client = new Client({
+export const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
     GatewayIntentBits.GuildMembers
@@ -39,5 +39,3 @@ client.on(Events.GuildMemberAdd, async (member) => {
 client.once(Events.ClientReady, async() => {
   console.log(`Logged in as ${client.user?.tag}`)
 })
-
-client.login()
