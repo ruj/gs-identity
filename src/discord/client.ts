@@ -25,7 +25,7 @@ client.on(Events.GuildMemberAdd, async (member) => {
     }
 
     const roleId = UserRoleDiscordIds[data.user.role]
-    const gsNickname = getGsNickname(data.username)
+    const gsNickname = getGsNickname(data.user.username)
 
     await member.roles.add(roleId)
     await member.setNickname(gsNickname)
